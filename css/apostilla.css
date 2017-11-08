@@ -1,0 +1,52 @@
+body p {
+    font-family: Verdana, Geneva, sans-serif;
+
+};
+body,td,th {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10px;
+    text-align: left;
+};
+body {
+    margin-left: 4cm;
+    margin-top:200px;
+    border: black;
+};
+.cuadro{
+    border: 1px solid #000;
+    width:425px;
+    padding:90px 60px 30px 55px;
+};
+.fila {
+    border: 1px;
+    color: red;
+};
+.apostille {
+    text-align:center;
+    font-size:10pt;
+    line-height:0.5em;
+    font-weight:bold;
+    margin-bottom: 30px;
+};
+.contenido{
+    font-size: 9pt;
+
+};
+.contenido ol li{
+    margin:0.3em;
+};
+.firma {
+    margin-top:40px;
+    margin-left:300px;
+}
+td {
+    border:hidden;
+}
+table {
+    border: 1px solid #000000;
+    text-align: left;
+}
+a:link   
+{   
+    text-decoration:none;   
+}
