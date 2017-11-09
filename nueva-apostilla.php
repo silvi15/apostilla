@@ -3,7 +3,7 @@
 <style type="text/css">
 body {
     margin-left: 4cm;
-    margin-top:100px;
+    margin-top: 5.7cm;
     font-family: Arial;
 }
 .cuadro{
@@ -13,9 +13,13 @@ body {
     margin:6.7px 1.3px 5.3px 11px;
 }
 .sin-cuadro {
-    width: 14cm;
-    height: 12cm;
-    margin:6.7px 21px 1.3px 5.3px;
+    height: 1cm;
+    margin: 19px 0px 0.7px 5.3px;
+}
+.sin-cuadro-t {
+    width: 15cm;
+    height: 4.5cm;
+    margin: 21px 1.3px 3.5px 5.3px;
 }
 .apostille {
     text-align:center;
@@ -57,7 +61,7 @@ body {
 }
 .fila5 {
     line-height: 0.5em;
-    margin-left: 7px;
+    margin-left: 0;
 }
 
 .fila5 .centro .espanol {
@@ -75,8 +79,17 @@ body {
 }
 
 .fila {
+    overflow: hidden;
     line-height:0.5em;
-    margin: 20px
+    margin: 19px
+}
+.fila .left {
+    float: left;
+    width: 50%;
+}
+.fila .right {
+    float: left;
+    width: 50%;
 }
 .fila .espanol{
     text-align:justify;
@@ -115,15 +128,11 @@ body {
 }
 
 .texto {
-    margin-top: 5px;
-    margin-left: 5.3px;
-    margin-bottom: 7px;
+    margin-left: 5px;
     font-size: 10pt;
     line-height: 12pt;
 }
 .texto-trilingue-espanol {
-    margin-top: 7px;
-    margin-left: 5px;
     text-align: center;
     font-size: 7pt;
     line-height: 7pt;
@@ -165,18 +174,19 @@ body {
                         <div class="traduccion">Certified | Attesté</div>
                     </div>
             </div>
+
             <div class="fila">
-                    <div class="derecha"> 
-                        <div class="espanol"> 5. en .......<spam>6. el día ...........</spam> </div>
-                        <div class="traduccion">at | á <spam>the | le</spam></div>
-                    </div>
-                    <!--
-                    <div class="izquierda"> 
-                            <div class="espanol"> </div>
-                            <div class="traduccion"> </div>
-                    </div>
-                    -->
+                <div class="left"> 
+                    <div class="espanol"> 5. en .......</div>
+                    <div class="traduccion">at | á</div>
+                </div>
+                
+                <div class="right"> 
+                    <div class="espanol">6. el día ...........</div>
+                    <div class="traduccion">the | le</div>
+                </div>  
             </div>
+
             <div class="fila">
                     <div class="espanol"> 7. por ............... </div>
                     <div class="traduccion">by | par </div>
@@ -185,48 +195,50 @@ body {
                     <div class="espanol"> 8. bajo el número .........</div>
                     <div class="traduccion">N° | sous n°</div>
             </div>
+
             <div class="fila">
-                    <div class="derecha"> 
-                        <div class="espanol"> 9. Sello/Timbre.... <spam>10. Firma</spam> </div>
-                        <div class="traduccion">Seal / stamp | Sceau / timbre <spam> Signature | Signature </spam> </div>
-                    </div>
-                    <!--
-                    <div class="izquierda"> 
-                            <div class="espanol">  </div>
-                            <div class="traduccion">  </div>
-                    </div>
-                    -->
+                <div class="left"> 
+                    <div class="espanol"> 9. Sello/Timbre....</div>
+                    <div class="traduccion">Seal / stamp | Sceau / timbre</div>
+                </div>
+                
+                <div class="right"> 
+                    <div class="espanol">10. Firma</div>
+                    <div class="traduccion">Signature | Signature</div>
+                </div>
             </div>
+
         </div><!-- end div cuadro -->
         <div class=sin-cuadro>
-        <div class="texto">
-            <div>Tipo de Documento: ACTA DE NACIMIENTO </div>
-            <div>Titular del Documento: CARLOS ORSON</div>
-            <div>Código de seguridad: ------------------ </div>
+            <div class="texto">
+                <div>Tipo de Documento: ACTA DE NACIMIENTO </div>
+                <div>Titular del Documento: CARLOS ORSON</div>
+                <div>Código de seguridad: ------------------ </div>
+            </div>
         </div>
-        <div class="texto-trilingue-espanol"> 
-        <p>Esta Apostilla certifica únicamente la autenticidad de la firma, la calidad en que el signatario del documento haya actuado y, en </p>
-        <p>su caso, la identidad del sello o timbre del que el documento público esté revestido.</p>
-        <p>Esta Apostilla no certifica el contenido del documento para el cual se expidió.</p>
-        <p>Esta Apostilla se puede verificar en la dirección siguiente http://cancilleria.gob.ar/legalizaciones</p>
-        <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-           
-        <p>This Apostille only certifies the authenticity of the signature and the capacity of the person who has signed the public document, and, where</p>
-        <p>appropriate, the identity of the seal or stamp which the public document bears.</p>
-        <p>This Apostille does not certify the content of the document for which it was issued.</p>
-        <p>[This Apostille is not valid for use anywhere within [insert the name of the State of issuance, incl. where possible and relevant, the territories to which </p>
-        <p>the Apostille Convention has been extended].]</p>
-        <p>To verify the issuance of this Apostille, see http://cancilleria.gob.ar/legalizaciones </p>
-        <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-           
-        <p>Cette Apostille atteste uniquement la véracité de la signature, la qualité en laquelle le signataire de l'acte a agi et, le cas échéant, l'identité du sceau</p>
-        <p>ou timbre dont cet acte public est revêtu.</p>
-        <p>Cette Apostille ne certifie pas le contenu de l’acte pour lequel elle a été émise.</p>
-        <p>[L’utilisation de cette Apostille n'est pas valable en / au [insérez le nom de l’État d’émission et, lorsque cela s’avère approprié, des territoires où la</p>
-        <p>Convention Apostille s’étend].]</p>
-        <p>Cette Apostille peut être vérifiée à l’adresse suivante : http://cancilleria.gob.ar/legalizaciones </p>
+        
+        <div class="sin-cuadro-t">
+            <div class="texto-trilingue-espanol"> 
+                <p>Esta Apostilla certifica únicamente la autenticidad de la firma, la calidad en que el signatario del documento haya actuado y, en </p>
+                <p>su caso, la identidad del sello o timbre del que el documento público esté revestido.</p>
+                <p>Esta Apostilla no certifica el contenido del documento para el cual se expidió.</p>
+                <p>Esta Apostilla se puede verificar en la dirección siguiente http://cancilleria.gob.ar/legalizaciones</p>
+                <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p>This Apostille only certifies the authenticity of the signature and the capacity of the person who has signed the public document, and, where</p>
+                <p>appropriate, the identity of the seal or stamp which the public document bears.</p>
+                <p>This Apostille does not certify the content of the document for which it was issued.</p>
+                <p>[This Apostille is not valid for use anywhere within [insert the name of the State of issuance, incl. where possible and relevant, the territories to which </p>
+                <p>the Apostille Convention has been extended].]</p>
+                <p>To verify the issuance of this Apostille, see http://cancilleria.gob.ar/legalizaciones </p>
+                <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p>Cette Apostille atteste uniquement la véracité de la signature, la qualité en laquelle le signataire de l'acte a agi et, le cas échéant, l'identité du sceau</p>
+                <p>ou timbre dont cet acte public est revêtu.</p>
+                <p>Cette Apostille ne certifie pas le contenu de l’acte pour lequel elle a été émise.</p>
+                <p>[L’utilisation de cette Apostille n'est pas valable en / au [insérez le nom de l’État d’émission et, lorsque cela s’avère approprié, des territoires où la</p>
+                <p>Convention Apostille s’étend].]</p>
+                <p>Cette Apostille peut être vérifiée à l’adresse suivante : http://cancilleria.gob.ar/legalizaciones </p>
+            </div>
         </div>
-    </div>
     </body>
 </html>
     
