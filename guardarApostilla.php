@@ -73,7 +73,7 @@ if( $consulta < 0){
 else {
 	echo "la Apostilla se creo con exito!";
 	?>
-	<form name="informe" method="get" action="apostilla.php">
+	<form name="informe" method="get" action="nueva-apostilla.php">
 		<p class="informe">
 			<?php
 			echo "<strong> ID:        </strong> $idApostillaNuevo <br>";

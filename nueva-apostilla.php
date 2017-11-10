@@ -81,7 +81,7 @@ body {
 .fila {
     overflow: hidden;
     line-height:0.5em;
-    margin: 19px
+    margin: 16px;
 }
 .fila .left {
     float: left;
@@ -138,11 +138,48 @@ body {
     font-size: 7pt;
     line-height: 7pt;
 }
-
-
-
 </style>
 </head>
+<body onload="window.print();">
+
+	<?php
+	include 'conexionSQL.php';
+	$numero=$_GET['numero']; 
+	$serie=$_GET['serie']; 
+	$idApostillaNuevo=$_GET['idApostillaNuevo'];
+
+	$seleccion = $mysqli->query("SELECT * FROM apostillas WHERE numero = '$numero' and serie='$serie' and id='$idApostillaNuevo'");
+	while ($fila = $seleccion->fetch_array()) {
+		$funcionario=$fila['funcionario'];
+		$tipodoc=$fila['tipodoc'];
+		$nombreApellido=$fila['nombreApellido'];
+		$ano=$fila['ano'];
+		$fecha=$fila['fecha'];
+		$idprovincia=$fila['idprovincia'];
+		$idautoridad=$fila['idautoridad'];
+        $circunscripcion=$fila['circunscripcion'];
+        $importe = $fila['importe'];
+	}
+	$fechaf=date("d/m/Y",strtotime($fecha));
+
+//tipodoc
+	$consulta=$mysqli->query("SELECT tipo FROM tiposdoc WHERE id ='$tipodoc' ");
+	while ($fila=$consulta->fetch_array()) {
+		$documento=$fila['tipo'];
+    }
+    $consulta=$mysqli->query("SELECT importe FROM importe WHERE id ='$importe' ");
+	while ($fila=$consulta->fetch_array()) {
+		$tipoimporte=$fila['importe'];
+	}
+//funcionario:
+	$consulta=$mysqli->query("SELECT * FROM funcionarios WHERE id ='$funcionario' ");
+	while ($fila=$consulta->fetch_array()) {
+		$nombreFuncionario=$fila['nombre'];
+		$sr=$fila['sr'];
+		$cargo=$fila['cargo'];
+		$institucion=$fila['institucion'];
+	}
+	?>
         <body>
         <div class="cuadro">
             <div class="apostille">
@@ -158,15 +195,15 @@ body {
                     <div class="traduccion">This public document | Le présent acte public</div>
             </div>
             <div class="fila">
-                    <div class="espanol"> 2. ha sido firmado por.................</div>
+                    <div class="espanol"> 2. ha sido firmado por <?php echo $nombreFuncionario; ?></div>
                     <div class="traduccion">has been signed by | a été signé par</div>
             </div>
             <div class="fila">
-                    <div class="espanol"> 3. quien actua en calidad de.............</div>
+                    <div class="espanol"> 3. quien actua en calidad de <?php echo $cargo ?></div>
                     <div class="traduccion"> acting in the capacity of | agissant en qualité de </div>
             </div>
             <div class="fila4">
-                    <div class="espanol"> 4. y está revestido del sello/timbre de........</div>
+                    <div class="espanol"> 4. y está revestido del sello/timbre de COLEGIO NOTARIAL DE  LA PROVINCIA DE MENDOZA</div>
                     <div class="traduccion">bears the seal / stamp of | est revétu du sceau / timbre de </div>
             </div>
             <div class="fila5">
@@ -178,28 +215,29 @@ body {
 
             <div class="fila">
                 <div class="left"> 
-                    <div class="espanol"> 5. en .......</div>
+                    <div class="espanol"> 5. en MENDOZA</div>
                     <div class="traduccion">at | á</div>
                 </div>
                 
                 <div class="right"> 
-                    <div class="espanol">6. el día ...........</div>
+                    <div class="espanol">6. el día <?php echo $fechaf; ?></div>
                     <div class="traduccion">the | le</div>
                 </div>  
             </div>
 
             <div class="fila">
-                    <div class="espanol"> 7. por ............... </div>
+                    <div class="espanol"><p> 7. por  EL COLEGIO NOTARIAL DE MENDOZA MINISTERIO DE RELACIONES EXTERIORES, </p> 
+                                        COMERCIO INTERNACIONAL Y CULTO (CONVENIO 02/09/2003) </div>
                     <div class="traduccion">by | par </div>
             </div>
             <div class="fila">
-                    <div class="espanol"> 8. bajo el número .........</div>
+                    <div class="espanol"> 8. bajo el número <?php echo "$idApostillaNuevo/$ano"; ?> </div>
                     <div class="traduccion">N° | sous n°</div>
             </div>
 
             <div class="fila">
                 <div class="left"> 
-                    <div class="espanol"> 9. Sello/Timbre....</div>
+                    <div class="espanol"> 9. Sello/Timbre <?php echo "ARG $tipoimporte"; ?></div>
                     <div class="traduccion">Seal / stamp | Sceau / timbre</div>
                 </div>
                 
@@ -212,8 +250,8 @@ body {
         </div><!-- end div cuadro -->
         <div class=sin-cuadro>
             <div class="texto">
-                <div>Tipo de Documento: ACTA DE NACIMIENTO </div>
-                <div>Titular del Documento: CARLOS ORSON</div>
+                <div>Tipo de Documento: <?php echo "$documento"; ?> </div>
+                <div>Titular del Documento: <?php  echo "$nombreApellido";?></div>
                 <div>Código de seguridad: ------------------ </div>
             </div>
         </div>
@@ -242,4 +280,3 @@ body {
         </div>
     </body>
 </html>
-    
