@@ -12,6 +12,7 @@
       <li><a href="">Apostillas</a>
         <ul>
           <li><a href="crearApostilla.php">Crear Apostilla</a></li>
+          <li><a href="formularioSinCosto.php">Apostilla Sin Costo</a></li>
           <li><a href="buscarApostilla.php">Buscar Apostilla</a></li>
           <li><a href="imprimirApostilla.php">Imprimir Apostilla</a></li>
           <li><a href="excelApostilla.php">Excel Apostilla</a></li>
@@ -21,6 +22,7 @@
       <li><a href="">Legalizaciones</a>
         <ul>
           <li><a href="crearLegalizacion.php">Crear Legalizaciones</a></li>
+          <li><a href="legalizacionSinCosto.php">Legalizacion Sin Costo</a></li>
           <li><a href="buscarLegalizacion.php">Buscar Legalizaciones</a></li>
           <li><a href="imprimirLegalizacion.php">Imprimir Legalizaciones</a></li>
           <li><a href="excelLegalizaciones.php">Excel Legalizaciones</a></li>
@@ -30,6 +32,7 @@
       <li><a href="">Habilitaciones</a>
         <ul>
           <li><a href="crearHabilitacion.php">Crear Habilitaciones</a></li>
+          <li><a href="HabilitacionSinCosto.php">Habilitacion Sin Costo</a></li>
           <li><a href="buscarHabilitacion.php">Buscar Habilitaciones</a></li>
           <li><a href="imprimirHabilitacion.php">Imprimir Habilitaciones</a></li>
           <li><a href="excelHabilitaciones.php">Excel Habilitaciones</a></li>

@@ -1,61 +1,143 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
 <style type="text/css">
-body p {
-	font-family: Verdana, Geneva, sans-serif;
-
-}
-body,td,th {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 10px;
-	text-align: left;
-}
 body {
-	margin-left: 4cm;
-	margin-top:200px;
-	border: black;
+    margin-left: 4cm;
+    margin-top: 5.7cm;
+    font-family: Arial;
 }
-#cuadro{
-	border: 1px solid #000;
-	width:425px;
-	padding:90px 60px 30px 55px;
+.cuadro{
+    border: 1px solid #000;
+    width: 14cm;
+    height: 12cm;
+    margin:6.7px 1.3px 5.3px 11px;
 }
-#apostille {
-	text-align:center;
-	font-size:10pt;
-	line-height:0.5em;
-	font-weight:bold;
-	margin-bottom: 30px;
+.sin-cuadro {
+    height: 1cm;
+    margin: 19px 0px 0.7px 5.3px;
 }
-#contenido{
-	font-size: 9pt;
+.sin-cuadro-t {
+    width: 15cm;
+    height: 4.5cm;
+    margin: 21px 1.3px 3.5px -8px;
+}
+.apostille {
+    text-align:center;
+    font-size:10pt;
+    line-height:0.5em;
+    font-weight:bold;
+    margin: 10px;
+}
+.apostille .titulo {
+    text-align:center;
+    font-size:10pt;
+    font-weight:bold;
+    margin: 5px;
+}
+.apostille a {
+    text-decoration:none;
+}
+.apostille .convenio {
+    text-align:center;
+    font-size:6pt;
+    line-height:2em;
+    margin: 5px;
+}
+.fila4 {
+    margin: 20px;
+}
+.fila4 .espanol{
+    text-align:justify;
+    font-size:8pt;
+    line-height:0.5em;
+    font-weight:bold;
+    margin: 5px;
+}
+.fila4 .traduccion {
+    text-align: justify;
+    line-height: 1em;
+    font-size: 5pt;
+    margin-left: 20px; 
+}
+.fila5 {
+    line-height: 0.5em;
+    margin-left: 0;
+}
 
+.fila5 .centro .espanol {
+    text-align:center;
+    font-size:8pt;
+    line-height:0.5em;
+    font-weight:bold;
+    margin: 5px;
 }
-#contenido ol li{
-	margin:0.3em;
-}
-#firma {
-	margin-top:40px;
-	margin-left:300px;
+.fila5 .centro .traduccion {
+    text-align:center;
+    font-size:5pt;
+    line-height: 0.5em;
+    margin: 5px;
 }
 
-</style>
+.fila {
+    overflow: hidden;
+    line-height:0.5em;
+    margin: 16px;
+}
+.fila .left {
+    float: left;
+    width: 50%;
+}
+.fila .right {
+    float: left;
+    width: 50%;
+}
+.fila .espanol{
+    text-align:justify;
+    font-size:8pt;
+    line-height:0.5em;
+    font-weight:bold;
+    margin: 5px;
+}
+.fila .traduccion {
+    text-align:justify;
+    font-size:5pt;
+    margin-left: 15px;
+}
+.fila .derecha .espanol {
+    text-align:justify;
+    font-size:8pt;
+    line-height:0.5em;
+    font-weight:bold;
+}
+.fila .derecha .espanol spam {
+    text-align:justify;
+    font-size:8pt;
+    line-height:0.5em;
+    font-weight:bold;
+    margin-left: 200px;
+}
+.fila .derecha .traduccion {
+    text-align: justify;
+    font-size: 5pt;
+    margin-left: 15px;
+}
+.fila .derecha .traduccion spam {
+    text-align:justify;
+    font-size:5pt;  
+    margin-left: 240px;
+}
 
-<style type="text/css" media="all">
-td {
-border:hidden;
+.texto {
+    margin-left: 5px;
+    font-size: 10pt;
+    line-height: 12pt;
 }
-table {
-	border: 1px solid #000000;
-	text-align: left;
+.texto-trilingue-espanol {
+    margin-left: 10px;
+    text-align: center;
+    font-size: 7pt;
+    line-height: 7pt;
 }
-a:link   
-{   
- text-decoration:none;   
-}  
 </style>
 </head>
 <body onload="window.print();">
@@ -67,15 +149,17 @@ $seleccion = $mysqli->query("SELECT * FROM apostillas WHERE id = '$idapostilla'"
 $row_cnt = $seleccion->num_rows;
 if($row_cnt > 0){
   	while ($fila = $seleccion->fetch_array()) {
-           $idapostilla=$fila['id'];
-  				 $funcionario=$fila['funcionario'];
-  				 $tipodoc=$fila['tipodoc'];
-  	       $nombreApellido=$fila['nombreApellido'];
+		   $idapostilla=$fila['id'];
+		   $numero=$fila['numero'];
+  		   $funcionario=$fila['funcionario'];
+  		   $tipodoc=$fila['tipodoc'];
+  	             $nombreApellido=$fila['nombreApellido'];
   				 $ano=$fila['ano'];
   				 $fecha=$fila['fecha'];
   				 $idprovincia=$fila['idprovincia'];
   				 $idautoridad=$fila['idautoridad'];
-  				 $circunscripcion=$fila['circunscripcion'];
+			 	 $circunscripcion=$fila['circunscripcion'];
+				 $importe = $fila['importe'];
   			 }
   	$fechaf=date("d/m/Y",strtotime($fecha));
 
@@ -83,7 +167,11 @@ if($row_cnt > 0){
   	$consulta=$mysqli->query("SELECT tipo FROM tiposdoc WHERE id ='$tipodoc' ");
   	while ($fila=$consulta->fetch_array()) {
   		$documento=$fila['tipo'];
-  	}
+	  }
+	  $consulta=$mysqli->query("SELECT importe FROM importe WHERE id ='$importe' ");
+	  while ($fila=$consulta->fetch_array()) {
+		  $tipoimporte=$fila['importe'];
+	  }
   //funcionario:
   	$consulta=$mysqli->query("SELECT * FROM funcionarios WHERE id ='$funcionario' ");
   	while ($fila=$consulta->fetch_array()) {
@@ -93,60 +181,111 @@ if($row_cnt > 0){
   		$institucion=$fila['institucion'];
   	}
   ?>
-  <div id='cuadro'>
-  <div id='apostille'>
-    <p><a href="listarApostilla.php"><strong>APOSTILLE</strong></a></p>
-  	<p>(Convention de la Haye du 5 octobre 1961)</p>
-  </div>
-  <div id='contenido'>
-  <ol>
-  <?php
-  echo  "
+ <body>
+        <div class="cuadro">
+            <div class="apostille">
+                <div class="titulo"><a href="crearApostilla.php">APOSTILLE</a></div>
+                <div class="convenio">(Convention de la Haye du 5 octobre 1961)</div>
+            </div>
+            <div class="fila">
+                    <div class="espanol"> 1. País:____________ARGENTINA________________</div>
+                    <div class="traduccion">Country/Pays</div>
+            </div>
+            <div class="fila">
+                    <div class="espanol"> El presente documento público </div>
+                    <div class="traduccion">This public document | Le présent acte public</div>
+            </div>
+            <div class="fila">
+                    <div class="espanol"> 2. ha sido firmado por <?php echo $nombreFuncionario; ?></div>
+                    <div class="traduccion">has been signed by | a été signé par</div>
+            </div>
+            <div class="fila">
+                    <div class="espanol"> 3. quien actua en calidad de <?php echo $cargo ?></div>
+                    <div class="traduccion"> acting in the capacity of | agissant en qualité de </div>
+            </div>
+            <div class="fila4">
+                    <div class="espanol"> 4. y está revestido del sello/timbre de COLEGIO NOTARIAL DE  LA PROVINCIA DE MENDOZA</div>
+                    <div class="traduccion">bears the seal / stamp of | est revétu du sceau / timbre de </div>
+            </div>
+            <div class="fila5">
+                    <div class="centro"> 
+                        <div class="espanol">Certificado</div>
+                        <div class="traduccion">Certified | Attesté</div>
+                    </div>
+            </div>
 
-    <li>  País: REPÚBLICA ARGENTINA <br>
-    El Presente documento público <strong>DE LEGALIZACIÓN.</strong></li>
+            <div class="fila">
+                <div class="left"> 
+                    <div class="espanol"> 5. en MENDOZA</div>
+                    <div class="traduccion">at | á</div>
+                </div>
+                
+                <div class="right"> 
+                    <div class="espanol">6. el día <?php echo $fechaf; ?></div>
+                    <div class="traduccion">the | le</div>
+                </div>  
+            </div>
 
+            <div class="fila">
+                    <div class="espanol"><p> 7. por  EL COLEGIO NOTARIAL DE MENDOZA MINISTERIO DE RELACIONES EXTERIORES, </p> 
+                                        COMERCIO INTERNACIONAL Y CULTO (CONVENIO 02/09/2003) </div>
+                    <div class="traduccion">by | par </div>
+            </div>
+            <div class="fila">
+                    <div class="espanol"> 8. bajo el número <?php echo "$$idapostilla/$ano"; ?> </div>
+                    <div class="traduccion">N° | sous n°</div>
+            </div>
 
-    <li> Ha sido firmado por:<strong>$sr  $nombreFuncionario </strong></li>
+            <div class="fila">
+                <div class="left"> 
+                    <div class="espanol"> 9. Sello/Timbre <?php echo "ARG $tipoimporte"; ?></div>
+                    <div class="traduccion">Seal / stamp | Sceau / timbre</div>
+                </div>
+                
+                <div class="right"> 
+                    <div class="espanol">10. Firma</div>
+                    <div class="traduccion">Signature | Signature</div>
+                </div>
+            </div>
 
-
-   <li> Quien actúa en calidad de: <strong>$cargo</strong></li>
-
-
-    <li> Lleva el sello/timbre de:<strong>$institucion</strong></li>
-   <p style='text-align:center'>Certificado</p>
-
-    <li> En:<strong>$idprovincia, MENDOZA</strong> 6. El día:<strong> $fechaf</strong></li>
-
-
-
-    <li value='7'> Por: <strong>$idautoridad</strong></li>
-
-
-    <li>Bajo el Número: <strong>$idapostilla/$ano/$circunscripcion</strong></li>
-
-
-    <li> Sello/Timbre</li>
-  <div id='firma'>
-   <li> Firma</li>
-  </div>
-
-  ";
-  ?>
-  </ol>
-  </div><!-- end div contenido -->
-  </div><!-- end div cuadro -->
-
-  <p margin-left="20px">Tipo de Documento:<?php echo $documento; ?></p>
-  <p margin-left="20px">Titular del Documento:<?php echo $nombreApellido; ?></p>
-
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  </body>
-  </html>
+        </div><!-- end div cuadro -->
+        <div class=sin-cuadro>
+            <div class="texto">
+                <div>Tipo de Documento: <?php echo "$documento"; ?> </div>
+                <div>Titular del Documento: <?php  echo "$nombreApellido";?></div>
+                <div>Código de seguridad: ------------------ </div>
+            </div>
+        </div>
+        
+        <div class="sin-cuadro-t">
+            <div class="texto-trilingue-espanol"> 
+                <p>Esta Apostilla certifica únicamente la autenticidad de la firma, la calidad en que el signatario del documento haya actuado y, en 
+                su caso, la identidad del sello o timbre del que el documento público esté revestido.</p>
+                <p>Esta Apostilla no certifica el contenido del documento para el cual se expidió.</p>
+                <p>Esta Apostilla se puede verificar en la dirección siguiente http://cancilleria.gob.ar/legalizaciones</p>
+                <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p>This Apostille only certifies the authenticity of the signature and the capacity of the person who has signed the public document, and, where
+                appropriate, the identity of the seal or stamp which the public document bears.</p>
+                <p>This Apostille does not certify the content of the document for which it was issued.</p>
+                <p>[This Apostille is not valid for use anywhere within [insert the name of the State of issuance, incl. where possible and relevant, the territories to which
+                the Apostille Convention has been extended].]</p>
+                <p>To verify the issuance of this Apostille, see http://cancilleria.gob.ar/legalizaciones </p>
+                <p>------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p>Cette Apostille atteste uniquement la véracité de la signature, la qualité en laquelle le signataire de l'acte a agi et, le cas échéant, l'identité du sceau
+                ou timbre dont cet acte public est revêtu.</p>
+                <p>Cette Apostille ne certifie pas le contenu de l’acte pour lequel elle a été émise.</p>
+                <p>[L’utilisation de cette Apostille n'est pas valable en / au [insérez le nom de l’État d’émission et, lorsque cela s’avère approprié, des territoires où la
+                Convention Apostille s’étend].]</p>
+                <p>Cette Apostille peut être vérifiée à l’adresse suivante : http://cancilleria.gob.ar/legalizaciones </p>
+            </div>
+        </div>
+    
 <?php
 }
 else{
 echo "No exite esa apostilla";
 header('Location: inicio.php');
 }
+?>
+</body>
+</html>

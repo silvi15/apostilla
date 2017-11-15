@@ -1,3 +1,19 @@
+<html>
+<head>
+<style type="text/css">
+.regForm table {
+  margin: 10px 10px 10px 5px;
+  width: 14cm;
+};
+.regForm table td {
+  border: 1px solid #000;
+  font-family: sans-serif;
+  margin: 15px;
+  padding: 5px;
+};
+</style>
+</head>
+</body>
 <?php
 include 'header.php';
 session_start();
@@ -21,31 +37,25 @@ $consulta=$mysqli->query("SELECT * FROM usuarios where id = '$id'");
 
 ?>
 <div id="div-regForm">
-    <form id="regForm" action="" method="post">
-      <table>
+    <form class="regForm" action="" method="post">
+      <table class="informeApos">
         <p align="center"><strong>Apostilla</strong><p>
         <br>
-        <a href="listarApostillaTodo.php">Listar Todo</a><p>
-        <a href="listarApostillaFecha.php">Listar Apostillas Por Fecha</a><p>
+        <a href="listarApostillaTodo.php">Listar Todo</a>
+        <br>
+        <a href="listarApostillaFecha.php">Listar Apostillas Por Fecha</a>
         <tr>
             </tr>
               <tr>
                 <td align="center">Id</td>
                 <td align="center">Numero</td>
-                <td align="center">Serie</td>
                 <td align="center">Factura</td>
-                <td align="center">Año</td>
-                <td align="center">Circunscripcion</td>
                 <td align="center">Funcionario</td>
                 <td align="center">Fecha</td>
                 <td align="center">Legalizador</td>
                 <td align="center">Tipo Documento</td>
                 <td align="center">Detalle</td>
-                <td align="center">Anulado</td>
                 <td align="center">Nombre Apellido</td>
-                <td align="center">Intervencion</td>
-                <td align="center">Arancel Consular</td>
-                <td align="center">Importe</td>
                 <td align="center">Ver</td>
                 <td align="center">Imprimir</td>
                 <td align="center">Editar</td>
@@ -85,10 +95,7 @@ foreach ($rows as $row) { ?>
     ?>
   </td>
 <td align="center"><?php echo $numero; ?></td>
-<td align="center"><?php echo $serie; ?></td>
 <td align="center"><?php echo $factura; ?></td>
-<td><?php echo "$ano"; ?></td>
-<td align="center"><?php echo "$circunscripcion"; ?></td>
 <td>
   <?php
   $consulta=$mysqli->query("SELECT nombre FROM funcionarios WHERE id ='$funcionario' ");
@@ -110,31 +117,8 @@ foreach ($rows as $row) { ?>
   ?>
 </td>
 <td><?php echo "$titulardoc"; ?></td>
-<td align="center" ><?php echo "$anulado"; ?></td>
+
 <td><?php echo $nombreApellido; ?></td>
-<td align="center">
-  <?php
-  echo $intervencion;
-  ?>
-</td>
-<td align="center">
-  <?php
-  $consulta=$mysqli->query("SELECT * FROM arancelconsular where id='$arancelConsular'");
-  while($fila=$consulta->fetch_array()){
-      $nombreArancel=$fila['nombre'];
-  }
-  echo $nombreArancel;
-  ?>
-</td>
-<td align="center">
-  <?php
-  $consulta=$mysqli->query("SELECT * FROM importe where id='$importe'");
-  while($fila=$consulta->fetch_array()){
-      $nombreImporte=$fila['importe'];
-  }
-  echo $nombreImporte;
-   ?>
- </td>
 
  <?php
   echo "
@@ -160,6 +144,6 @@ foreach ($rows as $row) { ?>
 <tr>
 <td>&nbsp;</td>
 <td>
-<input type="button" name="imprimir" value="Imprimir" onclick="window.print();">
 </td>
 </tr>
+</body></html>

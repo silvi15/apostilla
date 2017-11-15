@@ -117,7 +117,9 @@ form{
 table td{
   border: 1px solid #000;
   font-family: sans-serif;
-  margin: 5px;
+  margin: 15px;
+  padding: 5px;
+
 }
 table td:hover{
   background: #c3bfbf;
@@ -142,7 +144,8 @@ select{
   width: 100%;
 }
 p{
-  font-family: sans-serif;;
+  font-family: sans-serif;
+  color: red;
 }
 input{
   width: 90%;
