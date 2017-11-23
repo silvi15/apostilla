@@ -49,8 +49,8 @@ while($fila6=$consulta->fetch_array()){
  action="formularioSinCosto3.php"
  onsubmit="return validate_form ( );">
 <table>
-<p align="center">El nuevo formulario, remplazarà a la Apostilla Numero <strong><?php echo $numerointervencion; ?><strong> </p>
-<p align="center"> Sera un formulario <strong> sin costo </strong> </p>
+<p class="sincosto" align="center" >El nuevo formulario, remplazarà a la Apostilla Numero <strong><?php echo $numerointervencion; ?><strong> </p>
+<p class="sincosto" align="center"> Sera un formulario <strong> sin costo </strong> </p>
 <!-- id-->
 <tr>
   <td class="nombre">REMPLAZA</td>

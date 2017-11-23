@@ -3,48 +3,25 @@
 <head>
   <meta charset="utf-8">
   <title>Apostillas</title>
-  <link rel="stylesheet" type="text/css" href="http://208.9.10.39/apostilla/apostilla2017/css/estilos.css">
-
+  <link rel="stylesheet" type="text/css" href="../../css/reporte.css">
+   <style type="text/css">
+   h3: { 
+       font-family: sans-serif;
+       color: #ccc;
+   }
+   .reporte form{
+       color: #ccc;
+   }
+   </style> 
 </head>
 <?php
-include 'http://208.9.10.39/apostilla/apostilla2017/estilomenu.php';
-include 'http://208.9.10.39/apostilla/apostilla2017/header.php';
 
 ?>
-<body>
+<body style="font-family: sans-serif">
 
-    <h3 align="center" font-family:sans-serif >REPORTE DE CANCILLERIA</h3>
- <!--
-<table>
-  <tr>
-    <th>Mes</th>
-    <th>Apostillas</th>
-    <th>Legalizaciones</th>
-    <th>Habilitaciones</th>
-    <th>TODO</th>
-  </tr>
-  <tr>
-    <td>Enero</td>
-    <td>
-        <a href="reporteexcel.php">Apostilla</a>
-        <a href="reporteexcel2.php"> Apostilla base 2016</a>
-    </td>
-    <td><a href="reporteexcelL.php">Legalizaciones</a> </td>
-    <td><a href="reporteexcelH.php">Habilitaciones</a></td>
-    <td><a href="reporteexcelT.php">TODO</a></td>
-  </tr>
-  <tr>
-    <td>Febrero</td>
-    <td><a href="reporteexcelAFeb.php">Apostilla</a></td>
-    <td><a href="reporteexcelLFeb.php">Legalizaciones</a> </td>
-    <td><a href="reporteexcelHFeb.php">Habilitaciones</a></td>
-    <td><a href="reporteexcelTFeb.php">TODO</a></td>
-  </tr>
-  
-</table>
--->
-<br><br><br>
-<form name="contact_form" method="post"action="crearLibroApostilla.php">
+    <h3 align="center" >REPORTE DE CANCILLERIA</h3>
+
+<form class="reporte" method="post"action="crearLibroApostilla.php">
     <table>
       <tr>
         <tr>SELECCIONAR FECHA INICIAL PARA <STRONG>APOSTILLAS</STRONG></tr>

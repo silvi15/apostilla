@@ -1,0 +1,20 @@
+ .reporte {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width: 90%;
+    padding: 20px 20px;
+    margin: auto;
+  }
+  table td{
+    border: 1px solid #000;
+    font-family: sans-serif;
+    margin: 15px;
+    padding: 5px;
+  
+  }
+  table td:hover{
+    background: #c3bfbf;
+    color: #fff;
+  
+  }
+  

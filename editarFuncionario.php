@@ -32,7 +32,9 @@ switch ($cir) {
 
 //verifico que el usuario sea carlos
 $rolCarlos="carlos";
-if(strcmp($usuario,$rolCarlos)==0){
+$rolEmi="egonzalez";
+
+if(strcmp($usuario,$rolCarlos)==0 || strcmp($usuario,$rolEmi)==0){
   $idf=$_GET['id'];
   echo "id es:$idf";
   $seleccionar=$mysqli->query("SELECT * FROM funcionarios where id = '$idf'");
@@ -84,7 +86,7 @@ if(strcmp($usuario,$rolCarlos)==0){
 <?php
 }//cierro el if
 else{
-  echo " <br> NO TENGO PERMISOS PARA ACCEDER <BR> <br>";
+  echo " <br> NO TENGO PERMISOS PARA ACCEDER COMO CARLOS <BR> <br>";
 }
 ?>
   <a href="inicio.php">Volver</a>
