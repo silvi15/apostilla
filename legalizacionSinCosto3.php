@@ -67,9 +67,9 @@ while ($fila4=$consulta4->fetch_array()) {
 	$nombreImporte=$fila4['importe'];
 }
 
-$consulta=$mysqli->query("INSERT INTO apostillas (idAnterior,numero,serie,factura,ano,circunscripcion,idautoridad,funcionario,fecha,legalizador,idpais,idprovincia,tipodoc,titulardoc,anulado,nombreApellido,intervencion,arancelconsular,importe,formularioSinCosto)
-VALUES ('$idApostilla','$numero','$serie','$factura','$ano','$idcir','$idAutoridad','$funcionario','$fecha','$legalizador','$idpais','$idprovincia','$tipodoc','$titulardoc','0','$nombreApellido','$intervencion','$arancelconsular','$importe','1')") or trigger_error($mysqli->error."[$consulta]");
-$idApostillaNuevo = $mysqli->insert_id;
+$consulta=$mysqli->query("INSERT INTO legalizaciones (idAnterior,numero,serie,factura,ano,circunscripcion,funcionario,fecha,legalizador,idpais,idprovincia,tipodoc,titulardoc,anulado,nombreApellido,intervencion,arancelconsular,importe,formularioSinCosto)
+VALUES ('$idlega','$numero','$serie','$factura','$ano','$idcir','$funcionario','$fecha','$legalizador','$idpais','$idprovincia','$tipodoc','$titulardoc','0','$nombreApellido','$intervencion','$arancelconsular','$importe','1')") or trigger_error($mysqli->error."[$consulta]");
+$idLegalizacionNuevo = $mysqli->insert_id;
 
 
 	
