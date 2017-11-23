@@ -1,7 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<style type="text/css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Documento sin título</title>
+	<style type="text/css">
 body {
     margin-left: 4cm;
     margin-top: 5.7cm;
@@ -168,6 +170,7 @@ body {
 	while ($fila=$consulta->fetch_array()) {
 		$documento=$fila['tipo'];
     }
+//importe
     $consulta=$mysqli->query("SELECT importe FROM importe WHERE id ='$importe' ");
 	while ($fila=$consulta->fetch_array()) {
 		$tipoimporte=$fila['importe'];
@@ -204,7 +207,7 @@ body {
                     <div class="traduccion"> acting in the capacity of | agissant en qualité de </div>
             </div>
             <div class="fila4">
-                    <div class="espanol"> 4. y está revestido del sello/timbre de COLEGIO NOTARIAL DE  LA PROVINCIA DE MENDOZA</div>
+                    <div class="espanol"> 4. y está revestido del sello/timbre de <?php echo "$institucion"; ?></div>
                     <div class="traduccion">bears the seal / stamp of | est revétu du sceau / timbre de </div>
             </div>
             <div class="fila5">

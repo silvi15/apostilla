@@ -32,7 +32,9 @@ switch ($cir) {
 
 //verifico que el usuario sea carlos
 $rolCarlos="carlos";
-if(strcmp($usuario,$rolCarlos)==0){
+
+$rolEmi="egonzalez";
+if(strcmp($usuario,$rolCarlos)==0 || strcmp($usuario,$rolEmi)==0){
   $id=$_GET['id'];
   
   $seleccionar=$mysqli->query("SELECT * FROM tiposdoc where id = '$id'");

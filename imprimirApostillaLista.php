@@ -44,18 +44,17 @@ body {
     margin: 5px;
 }
 .fila4 {
-    margin: 20px;
+    margin: 10px;
 }
 .fila4 .espanol{
     text-align:justify;
     font-size:8pt;
-    line-height:0.5em;
     font-weight:bold;
     margin: 5px;
 }
 .fila4 .traduccion {
     text-align: justify;
-    line-height: 1em;
+    line-height:0.5em;
     font-size: 5pt;
     margin-left: 20px; 
 }
@@ -80,8 +79,8 @@ body {
 
 .fila {
     overflow: hidden;
-    line-height:0.5em;
-    margin: 16px;
+    line-height:1em;
+    margin: 10px;
 }
 .fila .left {
     float: left;
@@ -204,7 +203,7 @@ if($row_cnt > 0){
                     <div class="traduccion"> acting in the capacity of | agissant en qualité de </div>
             </div>
             <div class="fila4">
-                    <div class="espanol"> 4. y está revestido del sello/timbre de COLEGIO NOTARIAL DE  LA PROVINCIA DE MENDOZA</div>
+                    <div class="espanol"> 4. y está revestido del sello/timbre de <?php echo "$institucion"; ?></div>
                     <div class="traduccion">bears the seal / stamp of | est revétu du sceau / timbre de </div>
             </div>
             <div class="fila5">

@@ -33,7 +33,6 @@ switch ($cir) {
 //verifico que el usuario sea carlos
 $rolCarlos="carlos";
 $rolEmi="egonzalez";
-
 if(strcmp($usuario,$rolCarlos)==0 || strcmp($usuario,$rolEmi)==0){
   $idf=$_GET['id'];
   echo "id es:$idf";

@@ -9,7 +9,7 @@
 <body>
   <div id="header">
     <ul class="nav">
-      <li><a href="">Apostillas</a>
+      <li><a href="inicio.php">Apostillas</a>
         <ul>
           <li><a href="crearApostilla.php">Crear Apostilla</a></li>
           <li><a href="formularioSinCosto.php">Apostilla Sin Costo</a></li>
@@ -19,7 +19,7 @@
           <li><a href="listarApostilla.php">Listar Apostilla</a></li>
         </ul>
       </li>
-      <li><a href="">Legalizaciones</a>
+      <li><a href="inicio.php">Legalizaciones</a>
         <ul>
           <li><a href="crearLegalizacion.php">Crear Legalizaciones</a></li>
           <li><a href="legalizacionSinCosto.php">Legalizacion Sin Costo</a></li>
@@ -29,7 +29,7 @@
           <li><a href="listarLegalizacion.php">Listar Legalizaciones</a></li>
         </ul>
       </li>
-      <li><a href="">Habilitaciones</a>
+      <li><a href="inicio.php">Habilitaciones</a>
         <ul>
           <li><a href="crearHabilitacion.php">Crear Habilitaciones</a></li>
           <li><a href="HabilitacionSinCosto.php">Habilitacion Sin Costo</a></li>
@@ -39,7 +39,7 @@
           <li><a href="listarHabilitacion.php">Listar Habilitaciones</a></li>
         </ul>
       </li>
-      <li><a href="">Funciones</a>
+      <li><a href="inicio.php">Funciones</a>
         <ul>
           <li><a href="listarDocumento.php">Listar Documento</a></li>
           <li><a href="agregarDocumento.php">Crear Documento</a></li>

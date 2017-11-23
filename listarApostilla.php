@@ -54,8 +54,8 @@ $consulta=$mysqli->query("SELECT * FROM usuarios where id = '$id'");
                 <td align="center">Fecha</td>
                 <td align="center">Legalizador</td>
                 <td align="center">Tipo Documento</td>
-                <td align="center">Detalle</td>
                 <td align="center">Nombre Apellido</td>
+                <td align="center">Detalle</td>
                 <td align="center">Ver</td>
                 <td align="center">Imprimir</td>
                 <td align="center">Editar</td>
@@ -116,9 +116,9 @@ foreach ($rows as $row) { ?>
   echo "$nombreDocumento";
   ?>
 </td>
-<td><?php echo "$titulardoc"; ?></td>
 
 <td><?php echo $nombreApellido; ?></td>
+<td><?php echo "$titulardoc"; ?></td>
 
  <?php
   echo "
