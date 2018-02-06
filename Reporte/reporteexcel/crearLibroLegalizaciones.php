@@ -8,7 +8,7 @@ $ano=$_POST['ano']; //echo "ano: $ano <br>";
 $dia2= $_POST['dia2']; echo"dia2: $dia2 ";
 $mes2 = $_POST['mes2']; echo "mes2: $mes2";
 $ano2 = $_POST['ano2']; echo "ano2: $ano2";
-$$fechaFinInforme = ("$ano2".'/'."$mes2".'/'."$dia2");
+$fechaFinInforme = ("$ano2".'/'."$mes2".'/'."$dia2");
 $fechaInicio=("$ano".'/'."$mes".'/'."$dia");
 
 
