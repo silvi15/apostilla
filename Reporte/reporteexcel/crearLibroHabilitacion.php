@@ -11,7 +11,7 @@ $$fechaFinInforme = ("$ano2".'/'."$mes2".'/'."$dia2");
 $fechaInicio=("$ano".'/'."$mes".'/'."$dia");
 
 
-    $conexion = new mysqli('localhost','root','CNmz4sql2012','apostilla2017');
+    $conexion = new mysqli('localhost','root','CNmz4sql2012','apostilla');
     if (mysqli_connect_errno()) {
         printf("La conexión con el servidor de base de datos falló: %s\n", mysqli_connect_error());
         exit();

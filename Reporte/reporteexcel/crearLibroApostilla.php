@@ -13,7 +13,7 @@ $fechaInicio=("$ano".'/'."$mes".'/'."$dia");
 //echo "fecha inicio$fechaInicio";
 //echo "fecha final :$hoy";
 
- $conexion = new mysqli('localhost','root','CNmz4sql2012','apostilla2017');
+ $conexion = new mysqli('localhost','root','CNmz4sql2012','apostilla');
     if (mysqli_connect_errno()) {
         printf("La conexión con el servidor de base de datos falló: %s\n", mysqli_connect_error());
         exit();
