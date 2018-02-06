@@ -38,15 +38,15 @@ switch ($cir) {
 }
  $numerointervencion = $_POST['numero'];
  echo "numero es: $numerointervencion";
-$consulta=$mysqli->query("SELECT * FROM  legalizaciones where numero = '$numerointervencion'");
+$consulta=$mysqli->query("SELECT * FROM  habilitaciones where numero = '$numerointervencion'");
 while($fila6=$consulta->fetch_array()){
-    $idlega=$fila6["id"];
+    $id=$fila6["id"];
     $numero=$fila6["numero"];
 }
 ?>
 <body>
 <form class="form-sin-costo" method="post"
- action="legalizacionSinCosto3.php"
+ action="habilitacionSinCosto3.php"
  onsubmit="return validate_form ( );">
 <table>
 <p align="center">El nuevo formulario, remplazarà la HABILITACION  Numero:  <strong><?php echo $numerointervencion; ?><strong> </p>
@@ -59,23 +59,23 @@ while($fila6=$consulta->fetch_array()){
       echo $numerointervencion;
        ?>
       <input type="hidden" name="numerointervencion"  value="<?php echo "$numerointervencion";?>">
-      <input type="hidden" name="idlega"  value="<?php echo "$idlega";?>">
+      <input type="hidden" name="id"  value="<?php echo "$id";?>">
     </td>
 </tr>
-<p align="center"><strong>Nueva Legalizacion</strong></p><br>
  <!--Intervencion -->
-<tr>
-  <td class="nombre">Intervencion</td>
+ <!--Intervencion -->
+ <tr>
+  <td class="nombre">Intervención</td>
     <td class="fila">
           <?php
-                $inter="2";
+                $inter="3";
                 $consulta=$mysqli->query("SELECT * FROM intervencion where id = '$inter'");
                 while ($fila = $consulta->fetch_array()) {
                       echo $fila["nombre"];
                       $intervencion=$fila["nombre"];
               }
           ?>
-          <input type="hidden" name="intervencion"  value="<?php echo "$intervencion";?>">
+          <input type="hidden" name="intervencion" size="100" maxlength="10" value="<?php echo "$intervencion";?>">
 
       </td>
 </tr>
@@ -83,21 +83,21 @@ while($fila6=$consulta->fetch_array()){
 <tr>
         <td class="nombre">Número</td>
             <td class="fila">
-              <input type="text" name="numero" size="6" maxlength="6" value="" required>
+              <input type="text" name="numero" size="100" maxlength="10" value="">
             </td>
 </tr>
 <!--serie -->
 <tr>
     <td class="nombre">Serie</td>
         <td class="fila">
-            <input type="text" name="serie" size="1" maxlength="1" value="" required>
+            <input type="text" name="serie" size="100" maxlength="10" value="">
       </td>
 </tr>
 <!--factura -->
 <tr>
       <td class="nombre">Factura</td>
           <td class="fila">
-                <input type="text" name="factura" size="14" maxlength="14" value="" required>
+                <input type="text" name="factura" size="100" maxlength="20" value="">
           </td>
 </tr>
 <!--ArancelConsular -->
@@ -105,17 +105,15 @@ while($fila6=$consulta->fetch_array()){
         <td class="nombre">Arancel Consular</td>
         <td class="fila">
         <?php
-            $consulta=$mysqli->query("SELECT * FROM arancelconsular where id in(2,3)");
-        ?>
-        <select name='arancelconsular'>
-        <?php
-            echo "<option>SELECCIONAR</option>";
-            while ($fila = $consulta->fetch_array()) {
-
-                echo "<option value='" . $fila['id'] . "'>" . $fila['nombre'] . " " . $fila['descripcion'] . "</option>";
-            }
-        ?>
-        </select>
+        $arancel="1";
+        $consulta=$mysqli->query("SELECT * FROM arancelconsular where id = '$arancel'");
+        while ($fila = $consulta->fetch_array()) {
+              $nombreArancel=$fila['nombre'];
+              $decArancel=$fila['descripcion'];
+              echo "$nombreArancel:$decArancel";
+      }
+    ?>
+    <input type="hidden" name="arancelconsular" value="<?php echo "$arancel";?>">
     </td>
 </tr>
 <!--funcionario -->
@@ -125,12 +123,12 @@ while($fila6=$consulta->fetch_array()){
         <?php
             $consulta=$mysqli->query("SELECT * FROM funcionarios ORDER BY nombre ASC");
         ?>
-        <select name='nombre' required>
+        <select name='nombre'>
         <?php
             echo "<option>SELECCIONAR</option>";
             while ($fila = $consulta->fetch_array()) {
               //echo "<option value='" . $fila['id'] . "'>" . $fila['nombre'] . "</option>";
-              echo "<option value='" . $fila['id'] . "'>" . $fila['nombre'] . "-> " . $fila['cargo'] . "</option>";
+              echo "<option value='" . $fila['id'] . "'>" . $fila['nombre'] . " -> " . $fila['cargo'] . "</option>";
             }
         ?>
         </select>
@@ -142,16 +140,17 @@ while($fila6=$consulta->fetch_array()){
         <td class="fila">
           <?php
               $consulta=$mysqli->query("SELECT * FROM circunscripcion where nombre ='$cir'");
-
+          ?>
+          <select name='circunscripcion'>
+          <?php
+              echo "<option>SELECCIONAR</option>";
               while ($fila = $consulta->fetch_array()) {
                   echo "<option value='" . $fila['id'] . "'>" . $fila['nombre'] . " : " . $fila['lugar'] . "</option>";
               }
-
           ?>
-            <input type="hidden" name="circunscripcion"  value="<?php echo "$cir";?>">
+          </select>
     </td>
 </tr>
-
 <!-- TIPODOC -->
 <tr>
         <td class="nombre">Tipo de Documento</td>
@@ -159,7 +158,7 @@ while($fila6=$consulta->fetch_array()){
         <?php
             $consulta=$mysqli->query("SELECT * FROM tiposdoc ORDER BY tipo ASC");
         ?>
-        <select name='tipo' required>
+        <select name='tipo'>
         <?php
             echo "<option>SELECCIONAR</option>";
             while ($fila = $consulta->fetch_array()) {
@@ -174,32 +173,33 @@ while($fila6=$consulta->fetch_array()){
     <tr>
         <td class="nombre">Nombre y Apellido</td>
         <td class="fila">
-        <input type="text" name="nombreApellido"  value="" required>
+        <input type="text" name="nombreApellido"  value="">
       </td>
     </tr>
 <!--titulardoc -->
     <tr>
         <td class="nombre">Detalle/ Titular Documento</td>
         <td class="fila">
-        <input type="textarea" name="titulardoc"  value="" required>
+        <input type="textarea" name="titulardoc"  value="">
         </td>
     </tr>
 
 <!-- Importe -->
-<tr>
+    <tr>
         <td class="nombre">Importe</td>
-        <td class="fila" required>
+        <td class="fila">
           <?php
-                $importeid="1";
-                $consulta=$mysqli->query("SELECT * FROM importe where id = '$importeid'");
-                while($fila=$consulta->fetch_array()){
-                $importeNumero=$fila["importe"];
-                echo "$ $importeNumero";
-                }
-          ?>
-            <input type="hidden" name="importe"  value="<?php echo "$importeid";?>" required>
+          $importeid="1";
+          $consulta=$mysqli->query("SELECT * FROM importe where id = '$importeid'");
+          while($fila=$consulta->fetch_array()){
+          $importeNumero=$fila["importe"];
+          echo "$";echo $importeNumero;
+          }
+    ?>
+      <input type="hidden" name="importe" size="100" maxlength="10" value="<?php echo "$importeid";?>">
         </td>
     </tr>
+
 </table>
 
   <input type="submit" name="send" value="Crear">
@@ -209,6 +209,32 @@ while($fila6=$consulta->fetch_array()){
 function validate_form ( )
 {
     valid = true;
+//intervencion
+    if ( document.contact_form.intervencion.selectedIndex == 0 )
+    {
+        alert ( "[ERROR] Selecciona una intervencion" );
+        valid = false;
+    }
+//numero
+    if ( document.contact_form.numero.value == "" )
+    {
+        alert ( "[ERROR] El campo número no puede ir vacio" );
+        valid = false;
+    }
+    /*validar que el campo numero sea numerico*/
+//serie
+    if ( document.contact_form.serie.value == "" )
+    {
+        alert ( "[ERROR] El campo serie no puede ir vacio" );
+        valid = false;
+    }
+    /*validar que el campo serie sea letra */
+//factura
+    if ( document.contact_form.factura.value == "" )
+    {
+        alert ( "[ERROR] El campo factura no puede ir vacio" );
+        valid = false;
+    }
 //arancel Consular
 if ( document.contact_form.arancelconsular.selectedIndex == 0 )
 {
@@ -233,6 +259,18 @@ if ( document.contact_form.intervencion.tipo == 0 )
     alert ( "[ERROR] Selecciona un documento" );
     valid = false;
 }
+//nombre y apellido
+    if ( document.contact_form.nombreApellido.value == "" )
+    {
+        alert ( "[ERROR] El campo nombre y apellido no puede ir vacio" );
+        valid = false;
+    }
+//detalle
+    if ( document.contact_form.titulardoc.value == "" )
+    {
+        alert ( "[ERROR] El campo detalle  no puede ir vacio" );
+        valid = false;
+    }
 //importe
 if ( document.contact_form.importe.selectedIndex == 0 )
 {

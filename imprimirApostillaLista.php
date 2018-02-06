@@ -2,8 +2,8 @@
 <head>
 <style type="text/css">
 body {
-    margin-left: 4cm;
-    margin-top: 5.7cm;
+    
+    margin: 5.7cm 1.3cm 0cm 4cm;
     font-family: Arial;
 }
 .cuadro{
@@ -127,12 +127,15 @@ body {
 }
 
 .texto {
+    
     margin-left: 5px;
     font-size: 10pt;
     line-height: 12pt;
 }
 .texto-trilingue-espanol {
+    width: 550px;
     margin-left: 10px;
+    margin-bottom: 50px;
     text-align: center;
     font-size: 7pt;
     line-height: 7pt;
@@ -142,6 +145,8 @@ body {
 <body onload="window.print();">
 
 <?php
+/* margin-left: 4cm;
+    margin-top: 5.7cm; */
 include 'conexionSQL.php';
 $idapostilla=$_GET['id']; //echo "numero por get = $numero <br>";
 $seleccion = $mysqli->query("SELECT * FROM apostillas WHERE id = '$idapostilla'");

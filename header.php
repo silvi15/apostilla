@@ -32,7 +32,7 @@
       <li><a href="inicio.php">Habilitaciones</a>
         <ul>
           <li><a href="crearHabilitacion.php">Crear Habilitaciones</a></li>
-          <li><a href="HabilitacionSinCosto.php">Habilitacion Sin Costo</a></li>
+          <li><a href="habilitacionSinCosto.php">Habilitacion Sin Costo</a></li>
           <li><a href="buscarHabilitacion.php">Buscar Habilitaciones</a></li>
           <li><a href="imprimirHabilitacion.php">Imprimir Habilitaciones</a></li>
           <li><a href="excelHabilitaciones.php">Excel Habilitaciones</a></li>
